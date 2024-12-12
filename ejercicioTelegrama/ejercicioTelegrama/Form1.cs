@@ -55,6 +55,6 @@ namespace ejercicioTelegrama
             }
             txtPrecio.Text = coste.ToString() + " euros";
         }
-        //buenas tardes
+        //buenas noches Enrique uWu
     }
 }
