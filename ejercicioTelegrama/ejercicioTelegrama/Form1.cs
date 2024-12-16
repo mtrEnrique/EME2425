@@ -10,7 +10,7 @@ namespace ejercicioTelegrama
         private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = ' ';
+            char tipoTelegrama = 'o';
             int numPalabras = 0;
             double coste;
             //Leo el telegrama 
@@ -25,7 +25,7 @@ namespace ejercicioTelegrama
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
-                if (numPalabras <= 20)
+                if (numPalabras <= 50)
                 {
                     coste = 2.5;
                 }
@@ -39,7 +39,7 @@ namespace ejercicioTelegrama
             {
                 if (tipoTelegrama == 'u')
                 {
-                    if (numPalabras <= 20)
+                    if (numPalabras <= 50)
                     {
                         coste = 5;
                     }
