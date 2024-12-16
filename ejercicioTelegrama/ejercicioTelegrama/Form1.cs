@@ -10,15 +10,26 @@ namespace ejercicioTelegrama
         private void btnCalcularPrecio_Click(object sender, EventArgs e)
         {
             string textoTelegrama;
-            char tipoTelegrama = 'o';
+            char tipoTelegrama = ' ';
             int numPalabras = 0;
             double coste;
             //Leo el telegrama 
             textoTelegrama = txtTelegrama.Text;
             // telegrama urgente?
+
             if (chkUrgente.Checked)
             {
+                chkOrdinario.Checked = false;
                 tipoTelegrama = 'u';
+            }
+            if (chkOrdinario.Checked)
+            {
+                tipoTelegrama = 'o';
+                chkUrgente.Checked = false;
+            }
+            if (!(chkOrdinario.Checked || chkUrgente.Checked))
+            {
+                throw new Exception("Debes seleccionar el tipo de telegrama que quieres enviar.");
             }
             //Obtengo el número de palabras que forma el telegrama 
             numPalabras = textoTelegrama.Length;
@@ -39,7 +50,7 @@ namespace ejercicioTelegrama
             {
                 if (tipoTelegrama == 'u')
                 {
-                    if (numPalabras <= 50)
+                    if (numPalabras <= 10)
                     {
                         coste = 5;
                     }
@@ -50,10 +61,15 @@ namespace ejercicioTelegrama
                 }
                 else
                 {
-                    coste = 1000;
+                    coste = 10;
                 }
             }
             txtPrecio.Text = coste.ToString() + " euros";
+        }
+
+        private void chkOrdinario_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
