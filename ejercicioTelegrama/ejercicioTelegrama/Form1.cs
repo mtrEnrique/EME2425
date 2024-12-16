@@ -25,7 +25,7 @@ namespace ejercicioTelegrama
             //Si el telegrama es ordinario
             if (tipoTelegrama == 'o')
             {
-                if (numPalabras <= 10)
+                if (numPalabras <= 20)
                 {
                     coste = 2.5;
                 }
@@ -39,7 +39,7 @@ namespace ejercicioTelegrama
             {
                 if (tipoTelegrama == 'u')
                 {
-                    if (numPalabras <= 10)
+                    if (numPalabras <= 20)
                     {
                         coste = 5;
                     }
@@ -50,11 +50,10 @@ namespace ejercicioTelegrama
                 }
                 else
                 {
-                    coste = 0;
+                    coste = 1000;
                 }
             }
             txtPrecio.Text = coste.ToString() + " euros";
         }
-        //buenas noches Enrique uWu
     }
 }
